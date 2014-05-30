@@ -4,6 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
+import com.parse.Parse;
+import com.parse.ParseAnalytics;
+import com.parse.ParseObject;
+
 
 /**
  * An activity representing a list of Restaurants. This activity
@@ -32,6 +36,13 @@ public class RestaurantListActivity extends FragmentActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+    	Parse.initialize(this, "p54EMRKDivZZkhr0vUqrdnyAE8jf7dSLa26qfyKl", "oEAIVEWG28rh03DDpUCMAwFDnIoimnaKJ54xh8ns");
+    	
+    	// Parse Test
+    	ParseObject testObject = new ParseObject("TestObject");
+    	testObject.put("foo", "bar");
+    	testObject.saveInBackground();
+    	
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_list);
 
